@@ -1,0 +1,43 @@
+<%- include("header") -%>
+
+<body>
+  <div class="box" id="heading">
+    <h1>It's <%= listName %> !</h1>
+  </div>
+
+  <div class="box">
+
+    <% for(var i=0;i<newentries.length;i++){ %>
+    <div class="item">
+      <input type="checkbox" name="" value="">
+      <p> <%= newentries[i] %> </p>
+    </div>
+    <%  } %>
+    <form class="item" action="/" method="post">
+      <input autocomplete="off" type="text" name="newentry" placeholder="New Entry: ">
+      <button class="add" type="submit" name="button" value="<%= listName %>"> + </button>
+    </form>
+  </div>
+
+  <div class="box toggle" id="heading">
+    <button name="button">
+      <h2><a
+        <% if( listName === 'Work List'){ %>
+          href="/";
+        <%  } %>
+        <% if( listName){ %>
+          href="/work";
+        <%  } %>
+        >Toggle List</a></h2>
+    </button>
+  </div>
+
+  <div class="box about" id="heading">
+    <button name="button">
+      <h2><a href="/about">About</a></h2>
+    </button>
+
+  </div>
+
+
+  <%- include("footer") -%>
